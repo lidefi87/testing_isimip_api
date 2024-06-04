@@ -53,7 +53,7 @@ response = requests.post('https://files.isimip.org/api/v2', files={
         'paths': paths,
         'operations': operations
     }),
-    test.nc': Path('test.nc').read_bytes(),  # needs to be the same as in the create_mask operation
+    'test.nc': Path('test.nc').read_bytes(),  # needs to be the same as in the create_mask operation
 })
 response.raise_for_status()
 job = response.json() #Status is 'failed' when using a mask not produced by/modified from API in operations
